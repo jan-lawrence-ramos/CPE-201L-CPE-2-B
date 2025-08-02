@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNwwwMcYelKuRfEVZE2ShHj",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jan-lawrence-ramos/CPE-201L-CPE-2-B/blob/main/DSA-Lab-Report-2-%20Colab%20Code\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_41NihodX1bT",
+        "outputId": "695da88a-39b9-4595-8042-a010782a88d3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Minimum: 1 Maximum: 9\n"
+          ]
+        }
+      ],
+      "source": [
+        "def find_min_max(sequence, index=0, current_min=None, current_max=None):\n",
+        "    if index == 0:\n",
+        "        if not sequence:\n",
+        "            return None, None\n",
+        "        current_min = current_max = sequence[0]\n",
+        "\n",
+        "    if index == len(sequence):\n",
+        "        return current_min, current_max\n",
+        "\n",
+        "    if sequence[index] < current_min:\n",
+        "        current_min = sequence[index]\n",
+        "    if sequence[index] > current_max:\n",
+        "        current_max = sequence[index]\n",
+        "\n",
+        "    return find_min_max(sequence, index + 1, current_min, current_max)\n",
+        "\n",
+        "# Example usage:\n",
+        "sequence = [5, 2, 9, 1, 5, 6]\n",
+        "min_val, max_val = find_min_max(sequence)\n",
+        "print(\"Minimum:\", min_val, \"Maximum:\", max_val)"
+      ]
+    }
+  ]
+}
