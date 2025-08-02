@@ -1,0 +1,113 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPxhGC49kjNhkZrSnHk8/X1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jan-lawrence-ramos/CPE-201L-CPE-2-B/blob/main/DSA-Lab-Report-1_Colab-Code\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "kDpwDhB3PHlj"
+      },
+      "outputs": [],
+      "source": [
+        "class Polygons:\n",
+        "    \"\"\"A class representing geometric polygons with name, sides, and area attributes.\"\"\"\n",
+        "\n",
+        "    def __init__(self, name: str, sides: int, area: float):\n",
+        "        \"\"\"\n",
+        "        Initialize a polygon instance.\n",
+        "\n",
+        "        Args:\n",
+        "            name (str): Name of the polygon\n",
+        "            sides (int): Number of sides (must be ≥3)\n",
+        "            area (float): Surface area (must be >0)\n",
+        "        \"\"\"\n",
+        "        self._name = name    # Encapsulated attribute for polygon name\n",
+        "        self._sides = sides  # Encapsulated attribute for side count\n",
+        "        self._area = area    # Encapsulated attribute for surface area\n",
+        "\n",
+        "    # Name accessors\n",
+        "    def set_name(self, name: str) -> None:\n",
+        "        \"\"\"Set the polygon's name.\"\"\"\n",
+        "        self._name = name\n",
+        "\n",
+        "    def get_name(self) -> str:\n",
+        "        \"\"\"Get the polygon's name.\"\"\"\n",
+        "        return self._name\n",
+        "\n",
+        "    # Sides accessors\n",
+        "    def set_sides(self, sides: int) -> None:\n",
+        "        \"\"\"Set the number of sides.\"\"\"\n",
+        "        self._sides = sides\n",
+        "\n",
+        "    def get_sides(self) -> int:\n",
+        "        \"\"\"Get the number of sides.\"\"\"\n",
+        "        return self._sides\n",
+        "\n",
+        "    # Area accessors\n",
+        "    def set_area(self, area: float) -> None:\n",
+        "        \"\"\"Set the surface area.\"\"\"\n",
+        "        self._area = area\n",
+        "\n",
+        "    def get_area(self) -> float:\n",
+        "        \"\"\"Get the surface area.\"\"\"\n",
+        "        return self._area"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create a square instance\n",
+        "square = Polygons(name=\"Square\", sides=4, area=25.0)\n",
+        "\n",
+        "# Retrieve and display attributes\n",
+        "print(\"Polygon Name:\", square.get_name())      # Output: Square\n",
+        "print(\"Number of Sides:\", square.get_sides()) # Output: 4\n",
+        "print(\"Area:\", square.get_area())             # Output: 25.0"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4ovZcdQ7PMZI",
+        "outputId": "8b9c5c95-2edc-4475-9ccb-6471af36edc6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Polygon Name: Square\n",
+            "Number of Sides: 4\n",
+            "Area: 25.0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
