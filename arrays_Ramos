@@ -1,0 +1,133 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN4qE7ON7q2xWWr1x6vuman",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jan-lawrence-ramos/CPE-201L-CPE-2-B/blob/main/arrays_Ramos\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6RCT4l63q7uF",
+        "outputId": "7bba2f5d-d046-4e67-d1d4-79afb989f801"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original array: [10, 60, 30, 40, 50]\n",
+            "\n",
+            "Menu:\n",
+            "1. Traverse array\n",
+            "2. Reverse array\n",
+            "3. sort array\n",
+            "4. insert array\n",
+            "5. delete array\n",
+            "6. modify array\n",
+            "7. exit array\n"
+          ]
+        }
+      ],
+      "source": [
+        "def traverse_array(arr): #tranverse\n",
+        "    \"\"\"Function to traverse and print all elements in the array\"\"\"\n",
+        "    print(\"Traversing the array:\")\n",
+        "    for i, element in enumerate(arr):\n",
+        "        print(f\"Index {i}: {element}\")\n",
+        "\n",
+        "def reverse(arr): #reverse\n",
+        "    reversed_arr = arr[::-1]\n",
+        "    print(\"Reversed array:\", reversed_arr)\n",
+        "\n",
+        "def sort(arr): #sort\n",
+        "    arr.sort()\n",
+        "    print(\"Sorted array:\", arr)\n",
+        "\n",
+        "def insert(arr, element): #insert\n",
+        "    arr.append(element)\n",
+        "    print(\"Array after insertion:\", arr)\n",
+        "\n",
+        "def delete(arr, element): #delete\n",
+        "    try:\n",
+        "        arr.remove(element)\n",
+        "        print(\"Array after deletion:\", arr)\n",
+        "    except ValueError:\n",
+        "        print(f\"Element {element} not found in the array.\")\n",
+        "\n",
+        "def modify(arr, index, new_element): #modify\n",
+        "    if 0 <= index < len(arr):\n",
+        "        arr[index] = new_element\n",
+        "        print(\"Array after modification:\", arr)\n",
+        "    else:\n",
+        "        print(\"Invalid index.\")\n",
+        "\n",
+        "def main():\n",
+        "    # Initialize an array\n",
+        "    arr = [10, 60, 30, 40, 50]\n",
+        "    print(\"Original array:\", arr)\n",
+        "\n",
+        "    while True:\n",
+        "        print(\"\\nMenu:\")\n",
+        "        print(\"1. Traverse array\")\n",
+        "        print(\"2. Reverse array\")\n",
+        "        print(\"3. sort array\")\n",
+        "        print(\"4. insert array\")\n",
+        "        print(\"5. delete array\")\n",
+        "        print(\"6. modify array\")\n",
+        "        print(\"7. exit array\")\n",
+        "        choice = input(\"Enter your choice (1 to 7): \")\n",
+        "\n",
+        "        if choice == '1':\n",
+        "            traverse_array(arr)\n",
+        "        elif choice == '2':\n",
+        "            reverse(arr)\n",
+        "        elif choice == '3':\n",
+        "            sort(arr)\n",
+        "        elif choice == '4':\n",
+        "            element = int(input(\"Enter element to insert: \"))\n",
+        "            insert(arr, element)\n",
+        "        elif choice == '5':\n",
+        "            element = int(input(\"Enter element to delete: \"))\n",
+        "            delete(arr, element)\n",
+        "        elif choice == '6' :\n",
+        "            index = int(input(\"Enter index to modify: \"))\n",
+        "            new_element = int(input(\"Enter new element: \"))\n",
+        "            modify(arr, index, new_element)\n",
+        "        elif choice == '7' :\n",
+        "            print(\"Exiting program\")\n",
+        "            break\n",
+        "        else:\n",
+        "            print(\"Invalid choice. Please enter a number between 1 to 7.\")\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    main()"
+      ]
+    }
+  ]
+}
