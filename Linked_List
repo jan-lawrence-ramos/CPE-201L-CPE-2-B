@@ -1,0 +1,96 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPPTYfDL7eRUnGE4TEwux6D",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jan-lawrence-ramos/CPE-201L-CPE-2-B/blob/main/Linked_List\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "PyOLPhV7kGKv"
+      },
+      "outputs": [],
+      "source": [
+        "# Node class\n",
+        "class Node:\n",
+        "\n",
+        "    # Function to initialize the node object\n",
+        "    def __init__(self, data):\n",
+        "        self.data = data # Assign data\n",
+        "        self.next = None # Initialize\n",
+        "                        # next as null\n",
+        "\n",
+        "# Linked List class\n",
+        "class LinkedList:\n",
+        "\n",
+        "    # Function to initialize the Linked\n",
+        "    # List object\n",
+        "    def __init__(self):\n",
+        "        self.head = None\n",
+        "    def print_data(self):\n",
+        "      current =self.head\n",
+        "      while current:\n",
+        "        print(current.data)\n",
+        "        current=current.next\n",
+        "\n",
+        "    def reverse(self):\n",
+        "        prev = None\n",
+        "        current = self.head\n",
+        "        while current:\n",
+        "            next_node = current.next\n",
+        "            current.next = prev\n",
+        "            prev = current\n",
+        "            current = next_node\n",
+        "        self.head = prev\n",
+        "\n",
+        "    def push(self, new_data):\n",
+        "        new_node = Node(new_data)\n",
+        "        new_node.next = self.head\n",
+        "        self.head = new_node\n",
+        "\n",
+        "if __name__=='__main__':\n",
+        "# Start with the empty list\n",
+        "    llist = LinkedList()\n",
+        "\n",
+        "    llist.head = Node(\"A\")  #object name1\n",
+        "    second = Node(\"B\")        #object name2\n",
+        "    third = Node(\"C\")\n",
+        "    fourth = Node(\"D\")\n",
+        "\n",
+        "    llist.head.next = second # Link first node with second\n",
+        "    second.next = third # Link second node with the third node\n",
+        "    third.next = fourth #Link third to fourth\n",
+        "\n",
+        "    llist.reverse() # This reverse the list\n",
+        "\n",
+        "    llist.push(\"E\") # Call push with an argument\n",
+        "\n",
+        "    print()\n",
+        "    llist.print_data() # Print the reverse list"
+      ]
+    }
+  ]
+}
